@@ -102,3 +102,84 @@ console.log(stack.pop())
 console.log(stack.peek())
 
 // insert/remove - O(1)
+
+            
+// =========================
+console.log('\n')
+
+// QUEUE IN JAVASCRIPT
+console.log('===== QUEUE IN JAVASCRIPT (LIFO Principle) ===== ');
+class Queue1 { // O(n) - Linear Time Complexity
+  constructor() {
+    this.items = [];
+  }
+  enqeue(element) {
+    this.items.push(element)
+  }
+  dequeue() {
+    return this.items.shift()
+  }
+  isEmpty() {
+    return this.items.length === 0
+  }
+  peek() {
+    if(!this.isEmpty()) {
+      return this.items[0]
+    }
+    return null
+  }
+  size() {
+    return this.items.length
+  }
+  print() {
+    console.log(this.items.toString())
+  }
+};
+
+const queue = new Queue1();
+console.log(queue.isEmpty());
+queue.enqeue(12)
+queue.enqeue(13)
+queue.enqeue(14)
+queue.enqeue(15)
+console.log(queue.size())
+queue.print()
+console.log(queue.dequeue())
+console.log(queue.peek());
+
+class Queue2 { // O(1) - Constant Time Complexity.
+  constructor() {
+    this.items = {};
+    this.back = 0;
+    this.front = 0;
+  }
+  enqueue(element) {
+    this.items[this.back] = element;
+    this.back++;
+  }
+  dequeue() {
+    const item = this.items[this.front];
+    delete this.items[this.front];
+    this.front++;
+    return item;
+  }
+  isEmpty() {
+    return this.back - this.front === 0;
+  }
+  peek() {
+    return this.items[this.front];
+  }
+  print() {
+    console.log(this.items)
+  }
+};
+
+const queue2 = new Queue2();
+console.log(queue2.isEmpty());
+queue2.enqueue(12)
+queue2.enqueue(13)
+queue2.enqueue(14)
+queue2.enqueue(15)
+queue2.print()
+console.log(queue2.dequeue())
+console.log(queue2.peek());
