@@ -31,4 +31,19 @@ console.log(person.run());
 // Object.values() - O(n)
 // Object.entries() - O(n)
 
+// ========================
+
 // SET IN JAVASCRIPT...
+const set = new Set([1,2,3,4,5])
+console.log(set)
+console.log(set.add(6,6,7,8,9,10))
+console.log(set.add(7))
+console.log(set.add(8))
+console.log(set.add(9))
+console.log(set.add(10))
+console.log(set.has(10))
+console.log(set.delete(5))
+console.log(set)
+for(let data of set) {
+  console.log(data)
+}
