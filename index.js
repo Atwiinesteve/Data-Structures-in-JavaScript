@@ -46,4 +46,18 @@ console.log(set.delete(5))
 console.log(set)
 for(let data of set) {
   console.log(data)
-}
+};
+
+// =========================
+
+// MAPS IN JAVASCRIPT...
+const map = new Map([['a', 1], ['b', 2]]);
+console.log(map.set('c', 3))
+console.log(map.has('c'))
+console.log(map.size())
+console.log(map.delete('a'))
+for(let [key, value] of map) {
+  console.log(`${key}: ${value}`)
+};
+
+// =========================
