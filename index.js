@@ -260,5 +260,5 @@ console.log(cicularQueue.isEmpty())
 // =========================
 console.log('\n');
 
-// LINKED LISTS IN JAVASCRIPT
+// LINKED LISTS IN JAVASCRIPT chapter 14 of the video
 console.log('===== LINKED LISTS IN JAVASCRIPT ===== ');
