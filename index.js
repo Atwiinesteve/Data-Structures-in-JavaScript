@@ -256,3 +256,9 @@ cicularQueue.enqueue(14)
 cicularQueue.enqueue(15)
 cicularQueue.enqueue(16)
 console.log(cicularQueue.isEmpty())
+            
+// =========================
+console.log('\n');
+
+// LINKED LISTS IN JAVASCRIPT
+console.log('===== LINKED LISTS IN JAVASCRIPT ===== ');
