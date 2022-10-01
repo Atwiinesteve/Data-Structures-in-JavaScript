@@ -54,10 +54,51 @@ for(let data of set) {
 const map = new Map([['a', 1], ['b', 2]]);
 console.log(map.set('c', 3))
 console.log(map.has('c'))
-console.log(map.size())
 console.log(map.delete('a'))
 for(let [key, value] of map) {
   console.log(`${key}: ${value}`)
 };
 
 // =========================
+console.log('\n')
+
+// STACK IN JAVASCRIPT
+console.log('===== STACKS IN JAVASCRIPT (LIFO Principle) ===== ')
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+  push(element) {
+    this.items.push(element)
+  }
+  pop() {
+    return this.items.pop()
+  }
+  peek() {
+    return this.items[this.items.length - 1]
+  }
+  isEmpty() {
+    return this.items.length === 0
+  }
+  size() {
+    return this.items.length
+  }
+  print() {
+    console.log(this.items.toString())
+  }
+};
+
+const stack = new Stack();
+console.log(stack.isEmpty())
+stack.push(12)
+stack.push(23)
+stack.push(90)
+stack.push(9)
+stack.push(76)
+stack.push(52)
+console.log(stack.size())
+console.log(stack.print())
+console.log(stack.pop())
+console.log(stack.peek())
+
+// insert/remove - O(1)
