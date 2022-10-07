@@ -277,7 +277,8 @@ console.log('===== LINKED LISTS IN JAVASCRIPT ===== ');
 // === JAVASCRIPT DATA STRUCTURES ==
 // =================================
 
-// A STACK DATA STRUCTURE.
+// =================================
+// A STACK DATA STRUCTURE. (Last In, First Out (LIFO))
 class Stack {
   
   constructor() {
@@ -303,6 +304,36 @@ class Stack {
 
   isEmpty() {
     return this.getSize() === 0;
+  }
+  
+};
+
+// =================================
+// A QUEUE DATA STRUCTURE. (First In, First Out (FIFO))
+class Queue {
+
+  constructor() {
+    this.items = [];
+  };
+
+  enqueue(element) {
+    this.items.push(element);
+  };
+
+  dequeue() {
+    return this.items.shift()
+  };
+
+  peek() {
+    return this.items[0];
+  };
+
+  getSize() {
+    return this.items.length;
+  };
+
+  isEmpty() {
+    return this.items.length === 0;
   }
   
 };
