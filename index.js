@@ -262,3 +262,47 @@ console.log('\n');
 
 // LINKED LISTS IN JAVASCRIPT chapter 14 of the video
 console.log('===== LINKED LISTS IN JAVASCRIPT ===== ');
+
+
+
+
+
+
+
+
+
+
+
+// =================================
+// === JAVASCRIPT DATA STRUCTURES ==
+// =================================
+
+// A STACK DATA STRUCTURE.
+class Stack {
+  
+  constructor() {
+    this.items = [];
+  };
+
+  push(element) {
+    this.items.push(element);  
+  };
+
+  pop() {
+    this.items.pop();
+  };
+
+  peek() {
+    if(this.items.length === 0) return null;
+    return this.items[this.items.length - 1]
+  };
+
+  getSize() {
+    return this.items.length;
+  };
+
+  isEmpty() {
+    return this.getSize() === 0;
+  }
+  
+};
