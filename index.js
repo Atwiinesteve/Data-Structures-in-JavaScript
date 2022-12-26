@@ -474,19 +474,48 @@
 
 // =========================================================================
 
-// NAIVE SEARCH ALGORITHM
-// - Searches a substring from within a main string.
+// // NAIVE SEARCH ALGORITHM
+// // - Searches a substring from within a main string.
 
-function naiveSearch(mainStr, subStr) {
-    if (subStr.length > mainStr.length) return false;
+// function naiveSearch(mainStr, subStr) {
+//     if (subStr.length > mainStr.length) return false;
 
-    for(let i = 0; i < mainStr.length; i++) {
-       for(let j = 0; j < subStr.length; j++) {
-            if(mainStr[i + j] !== subStr[j]) break;
-            if(j === subStr.length - 1) console.log("true.."); 
+//     for(let i = 0; i < mainStr.length; i++) {
+//        for(let j = 0; j < subStr.length; j++) {
+//             if(mainStr[i + j] !== subStr[j]) break;
+//             if(j === subStr.length - 1) console.log("true.."); 
+//         }
+//     }
+// }
+// naiveSearch("stephen", "hen");
+
+// =========================================================================
+
+
+// =========================================================================
+
+// // BUBBLE SORT ALGORITHM
+// // - Sorts elements in either ascending or descending order.
+
+function bubbleSort(array) {
+    let isSwapped;
+
+    for(let i = array.length; i > 0; i--) {
+        isSwapped = false;
+
+        for(let j = 0; j < i - 1; j++) {
+            if(array[j] > array[j + 1]) {
+                [array[j], array[j+1]] = [array[j+1], array[j]];
+                isSwapped = true;
+            }
+        }
+
+        if(!isSwapped) {
+            break;
         }
     }
+    console.log(array);
 }
-naiveSearch("stephen", "hen");
+bubbleSort([12,54,7,2,89,3,1,787,354,5]);
 
 // =========================================================================
