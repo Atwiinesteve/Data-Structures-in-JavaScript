@@ -403,7 +403,7 @@
 // recursiveFnWithoutLimit(); // will run into an infinite loop - will never stop
 
 
-// A Recursive Functoiiin with Limit;
+// A Recursive Function with Limit;
 // let count = 1;
 // function recursiveFnWithLimit() {
 //   console.log(`Recursive Function with count: ${count}`);
@@ -415,17 +415,58 @@
 
 
 // A Recursion Use Case.
-function oddArray(array) {
-  let result = [];
-  function helperRecursiveFn(array) {
-    if(array.length === 0) {
-      return;
-    } else if(array[0] % 2 !== 0) {
-      result.push(array[0]);
+// function oddArray(array) {
+//   let result = [];
+//   function helperRecursiveFn(array) {
+//     if(array.length === 0) {
+//       return;
+//     } else if(array[0] % 2 !== 0) {
+//       result.push(array[0]);
+//     }
+//     helperRecursiveFn(array.slice(1));
+//   };
+//   helperRecursiveFn(array);
+//   console.log(result);
+// };
+// oddArray([1,2,3,4,5,6,7,8,9,10]);
+
+
+// LINEAR ALGORITHMS
+// - Searching through an array - O(n);
+
+// let numbers = [1,12,13,34,45,756,23,89,23,6];
+// function linearSearch(array, element) {
+//   for(let i = 0; i < array.length; i++) {
+//     if(element === array[i]) {
+//       console.log(`${element} exists in array at index ${i}..`)
+//     }
+//   }
+//   console.log(`${element} does not exist in the given array.`);
+// };
+// linearSearch(numbers, 10);
+// linearSearch(numbers, 1);
+// linearSearch(numbers, 23);
+// linearSearch(numbers, 27);
+
+
+// BINARY SEARCH ALGORITHM
+// - Split an array into 2 halves and search for the element.
+function binarySearch(array, element) {
+  
+    let firstIndex = 0;
+    let lastIndex = array.length - 1;
+    let middleIndex = Math.floor((firstIndex + lastIndex) / 2);
+
+    while (array[middleIndex] !== element && firstIndex <= lastIndex) {
+        if(array[middleIndex] > element) {
+                lastIndex = middleIndex - 1;
+        }else {
+                firstIndex = middleIndex + 1;
+        }
+        middleIndex = Math.floor((firstIndex + lastIndex) / 2);
     }
-    helperRecursiveFn(array.slice(1));
-  };
-  helperRecursiveFn(array);
-  console.log(result);
-};
-oddArray([1,2,3,4,5,6,7,8,9,10]);
+    console.log(array[middleIndex] === element ? middleIndex : -1);
+}
+
+const array = [2, 3, 6, 8, 10, 12];
+binarySearch(array, 6);
