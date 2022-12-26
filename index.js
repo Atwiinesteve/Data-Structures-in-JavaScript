@@ -567,3 +567,38 @@
 // mergeSortAlgorithm([12,45,67,12,43,6,13,86,2,43,8,34,8]);
 
 // =========================================================================
+
+
+// =========================================================================
+
+// QUICK SORT ALGORITHM
+// - Quick sort is one of the fastest sorting algorithm. In quick sort we select       a single element known as pivot and we will move all element (smaller than         pivot) to the left of pivot.
+
+function pivotUtility(array, start=0, end=array.length - 1) {
+    let pivotIndex = start;
+    let pivot = array[start];
+
+    for(let i = start + 1; i < array.length; i++) {
+        if(pivot > array[i]) {
+            pivotIndex++;
+            [array[pivotIndex], array[i]] = [array[i], array[pivotIndex]];
+        }   
+    }
+
+    [array[pivotIndex], array[start]] = [array[start], array[pivotIndex]];
+    console.log(pivotIndex);
+};
+
+function quickSort(array, left=0, right=array.length-1) {
+    if (left < right) {
+        let pivotIndex = pivotUtility(array, left, right);
+        quickSort(array, left, pivotIndex - 1);
+        quickSort(array, pivotIndex + 1, right);
+    }
+
+    console.log(array);
+};
+
+quickSort([12,54,1,67,3], 0, 5);
+
+// =========================================================================
