@@ -451,22 +451,42 @@
 
 // BINARY SEARCH ALGORITHM
 // - Split an array into 2 halves and search for the element.
-function binarySearch(array, element) {
+// function binarySearch(array, element) {
   
-    let firstIndex = 0;
-    let lastIndex = array.length - 1;
-    let middleIndex = Math.floor((firstIndex + lastIndex) / 2);
+//     let firstIndex = 0;
+//     let lastIndex = array.length - 1;
+//     let middleIndex = Math.floor((firstIndex + lastIndex) / 2);
 
-    while (array[middleIndex] !== element && firstIndex <= lastIndex) {
-        if(array[middleIndex] > element) {
-                lastIndex = middleIndex - 1;
-        }else {
-                firstIndex = middleIndex + 1;
+//     while (array[middleIndex] !== element && firstIndex <= lastIndex) {
+//         if(array[middleIndex] > element) {
+//                 lastIndex = middleIndex - 1;
+//         }else {
+//                 firstIndex = middleIndex + 1;
+//         }
+//         middleIndex = Math.floor((firstIndex + lastIndex) / 2);
+//     }
+//     console.log(array[middleIndex] === element ? middleIndex : -1);
+// }
+
+// const array = [2, 3, 6, 8, 10, 12];
+// binarySearch(array, 6);
+
+
+// =========================================================================
+
+// NAIVE SEARCH ALGORITHM
+// - Searches a substring from within a main string.
+
+function naiveSearch(mainStr, subStr) {
+    if (subStr.length > mainStr.length) return false;
+
+    for(let i = 0; i < mainStr.length; i++) {
+       for(let j = 0; j < subStr.length; j++) {
+            if(mainStr[i + j] !== subStr[j]) break;
+            if(j === subStr.length - 1) console.log("true.."); 
         }
-        middleIndex = Math.floor((firstIndex + lastIndex) / 2);
     }
-    console.log(array[middleIndex] === element ? middleIndex : -1);
 }
+naiveSearch("stephen", "hen");
 
-const array = [2, 3, 6, 8, 10, 12];
-binarySearch(array, 6);
+// =========================================================================
