@@ -497,25 +497,73 @@
 // // BUBBLE SORT ALGORITHM
 // // - Sorts elements in either ascending or descending order.
 
-function bubbleSort(array) {
-    let isSwapped;
+// function bubbleSort(array) {
+//     let isSwapped;
 
-    for(let i = array.length; i > 0; i--) {
-        isSwapped = false;
+//     for(let i = array.length; i > 0; i--) {
+//         isSwapped = false;
 
-        for(let j = 0; j < i - 1; j++) {
-            if(array[j] > array[j + 1]) {
-                [array[j], array[j+1]] = [array[j+1], array[j]];
-                isSwapped = true;
-            }
-        }
+//         for(let j = 0; j < i - 1; j++) {
+//             if(array[j] > array[j + 1]) {
+//                 [array[j], array[j+1]] = [array[j+1], array[j]];
+//                 isSwapped = true;
+//             }
+//         }
 
-        if(!isSwapped) {
-            break;
-        }
-    }
-    console.log(array);
-}
-bubbleSort([12,54,7,2,89,3,1,787,354,5]);
+//         if(!isSwapped) {
+//             break;
+//         }
+//     }
+//     console.log(array);
+// }
+// bubbleSort([12,54,7,2,89,3,1,787,354,5]);
+
+// =========================================================================
+
+
+// =========================================================================
+
+// MERGE SORT ALGORITHM
+// - Divides arrays and sorts them afterwords.
+
+// function mergeSortedArray(array1, array2) {
+//     let result = [];
+//     let i = 0;
+//     let j = 0;
+
+//     while(i < array1.length && j < array2.length) {
+//         if(array1[i] < array2[j]) {
+//             result.push(array1[i]);
+//             i++;
+//         } else {
+//             result.push(array2[j]);
+//             j++;
+//         }
+//     }
+
+//     while (i < array1.length) {
+//         result.push(array1[i]);
+//         i++;
+//     }
+
+//     while (j < array2.length) {
+//         result.push(array2[j]);
+//         j++;
+//     }
+
+//     console.log(result);
+// }
+
+// function mergeSortAlgorithm(array) {
+//     if(array.length <= 1) return array;
+
+//     let midPoint = Math.floor(array.length / 2);
+//     let leftArray = mergeSortAlgorithm(array.slice(0, midPoint));
+//     let rightArray = mergeSortAlgorithm(array.slice(midPoint));
+
+//     console.log(mergeSortedArray(leftArray, rightArray));
+// }
+
+// mergeSortAlgorithm([12,45,67,12,43,6,13,86,2,43,8,34,8]);
 
 // =========================================================================
